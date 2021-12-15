@@ -113,7 +113,7 @@ void Rotate(String Direction)
   if(Direction=="Right")
   {
     digitalWrite(13,HIGH);
-    delay(2); 
+    delay(2); //delayMicroseconds(Microseconds);
     digitalWrite(13,LOW);
 }
   if(Direction=="Left")
@@ -134,21 +134,22 @@ void loop()
     {
       if(ObjectInLeft())
       {
-        //rotate robot 180
+        Rotate("Right");
+        Rotate("Right");
       }
       else
       {
-        //rotate robot -90 degres
+        Rotate("Left");
       }
     }
     else
     {
       Rotate("Right");
     }
-
   }
   else
   {
     Move();    
   }  
+  Move();
 }
